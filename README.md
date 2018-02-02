@@ -10,6 +10,9 @@ https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow
 
 [2] V. Mnih, A. Badia, M. Mirza, A. Graves, T. Lillicrap, T. Harley, D. Silver and K. Kavukcuoglu, "Asynchronous Methods for Deep Reinforcement Learning", Arxiv.org, 2018. [Online]. Available: https://arxiv.org/abs/1602.01783. [Accessed: 02- Feb- 2018].
 
+[3] miyosuda@ github async_deep_reinforce
+ https://github.com/miyosuda/async_deep_reinforce
+
 ========================================================================================
 
 By Patrick Coady: [Learning Artificial Intelligence](https://learningai.io/)
