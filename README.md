@@ -2,7 +2,7 @@
 
 ### Asynchronous Proximal Policy Optimization
 
-<img src="https://raw.githubusercontent.com/wu6u3/async_trpo/master/Async.png" height="300">
+<img src="https://raw.githubusercontent.com/wu6u3/async_trpo/master/doc/async.png" height="300">
 
 ### Reference
 [1] Arthur Juliani, "Simple Reinforcement Learning with Tensorflow Part 8: Asynchronous Actor-Critic Agents (A3C),"
