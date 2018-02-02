@@ -2,6 +2,8 @@
 Logging and Data Scaling Utilities
 
 Written by Patrick Coady (pat-coady.github.io)
+
+Modified by Tin-Yin Lai (wu6u3@github)
 """
 import numpy as np
 import os

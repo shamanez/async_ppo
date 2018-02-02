@@ -2,6 +2,8 @@
 State-Value Function
 
 Written by Patrick Coady (pat-coady.github.io)
+
+Modified by Tin-Yin Lai (wu6u3) into asynchronous version
 """
 
 import tensorflow as tf

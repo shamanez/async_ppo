@@ -2,6 +2,9 @@
 NN Policy with KL Divergence Constraint (PPO / TRPO)
 
 Written by Patrick Coady (pat-coady.github.io)
+
+Modified by Tin-Yin Lai (wu6u3@github) into asynchronous version
+
 """
 import numpy as np
 import tensorflow as tf

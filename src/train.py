@@ -2,7 +2,11 @@
 """
 PPO: Proximal Policy Optimization
 
+
 Written by Patrick Coady (pat-coady.github.io)
+
+Modified by Tin-Yin Lai (wu6u3) into asynchronous version
+
 
 PPO uses a loss function and gradient descent to approximate
 Trust Region Policy Optimization (TRPO). See these papers for
