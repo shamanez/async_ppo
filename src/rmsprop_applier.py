@@ -1,3 +1,7 @@
+# miyosuda@ github
+# https://github.com/miyosuda/async_deep_reinforce
+
+
 # -*- coding: utf-8 -*-
 import tensorflow as tf
 
