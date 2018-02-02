@@ -1,5 +1,17 @@
 ## Proximal Policy Optimization with Generalized Advantage Estimation
 
+### Asynchronous Version PPO
+
+![alt text](https://raw.githubusercontent.com/wu6u3/async_trpo/master/Async.png)
+
+### Reference
+[1] Arthur Juliani, "Simple Reinforcement Learning with Tensorflow Part 8: Asynchronous Actor-Critic Agents (A3C),"
+https://medium.com/emergent-future/simple-reinforcement-learning-with-tensorflow-part-8-asynchronous-actor-critic-agents-a3c-c88f72a5e9f2
+
+[2] V. Mnih, A. Badia, M. Mirza, A. Graves, T. Lillicrap, T. Harley, D. Silver and K. Kavukcuoglu, "Asynchronous Methods for Deep Reinforcement Learning", Arxiv.org, 2018. [Online]. Available: https://arxiv.org/abs/1602.01783. [Accessed: 02- Feb- 2018].
+
+========================================================================================
+
 By Patrick Coady: [Learning Artificial Intelligence](https://learningai.io/)
 
 ### Summary
