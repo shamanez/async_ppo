@@ -1,6 +1,6 @@
 ## Proximal Policy Optimization with Generalized Advantage Estimation
 
-### Asynchronous Version PPO
+### Asynchronous Proximal Policy Optimization
 
 <img src="https://raw.githubusercontent.com/wu6u3/async_trpo/master/Async.png" height="300">
 
