@@ -2,7 +2,7 @@
 
 ### Asynchronous Version PPO
 
-![alt text](https://raw.githubusercontent.com/wu6u3/async_trpo/master/Async.png | width=100)
+<img src="https://raw.githubusercontent.com/wu6u3/async_trpo/master/Async.png" height="300">
 
 ### Reference
 [1] Arthur Juliani, "Simple Reinforcement Learning with Tensorflow Part 8: Asynchronous Actor-Critic Agents (A3C),"
