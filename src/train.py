@@ -44,22 +44,22 @@ import time
 from rmsprop_applier import RMSPropApplier
 
 import threading
-from multiprocessing.managers import BaseManager     
-import multiprocessing as mp 
+from multiprocessing.managers import BaseManager
+import multiprocessing as mp
 import tensorflow as tf
 
-class MPManager(BaseManager): 
+class MPManager(BaseManager):
     pass
 
 
-MPManager.register('Policy', Policy) 
+MPManager.register('Policy', Policy)
 MPManager.register('NNValueFunction', NNValueFunction)
 
 
 N_WORKERS = 3
 RMSP_ALPHA = 0.99
 RMSP_EPSILON = 0.1
-GRAD_NORM_CLIP = 40.0 
+GRAD_NORM_CLIP = 40.0
 DEVICE = device = "/cpu:0"
 
 class GracefulKiller:
@@ -324,7 +324,7 @@ def main(env_name, num_episodes, gamma, lam, kl_targ, batch_size, hid1_mult, pol
 
 
         
-    # lacal policy declair 
+    # lacal policy declair
     env_a = [None]*N_WORKERS
     obs_dim_a = [None]*N_WORKERS
     act_dim_a = [None]*N_WORKERS
@@ -350,8 +350,8 @@ def main(env_name, num_episodes, gamma, lam, kl_targ, batch_size, hid1_mult, pol
 
         policy_a[i] = Policy(obs_dim_a[i], act_dim_a[i], kl_targ, hid1_mult, policy_logvar, i, shared_policy)
         policy_a[i].apply_gradients = grad_applier.apply_gradients(
-            shared_policy.get_vars(),                         
-            policy_a[i].gradients ) 
+            shared_policy.get_vars(),
+            policy_a[i].gradients )
 
 
     # init tensorflow
@@ -381,10 +381,10 @@ def main(env_name, num_episodes, gamma, lam, kl_targ, batch_size, hid1_mult, pol
             hid1_mult: hid1 size for policy and value_f (mutliplier of obs dimension)
             policy_logvar: natural log of initial policy variance
         """
-        env = env_a[thread_idx] 
+        env = env_a[thread_idx]
         policy = policy_a[thread_idx]
-        obs_dim = obs_dim_a[thread_idx]
-        act_dim = act_dim_a[thread_idx]
+        #obs_dim = obs_dim_a[thread_idx]
+        #act_dim = act_dim_a[thread_idx]
         logger = logger_a[thread_idx]
         aigym_path = aigym_path_a[thread_idx]
         scaler = scaler_a[thread_idx]
@@ -408,7 +408,7 @@ def main(env_name, num_episodes, gamma, lam, kl_targ, batch_size, hid1_mult, pol
 
             ## copy global var into local
             sess.run( policy.sync)
-            sess.run(val_func.sync)              
+            sess.run(val_func.sync)
 
             ## compute new model on local policy
             trajectories = run_policy(sess, env, policy, scaler, logger, episodes=batch_size)
@@ -472,7 +472,6 @@ def main(env_name, num_episodes, gamma, lam, kl_targ, batch_size, hid1_mult, pol
     train_threads = []
     for i in range(N_WORKERS):
         train_threads.append(threading.Thread(target=single_work, args=(i,)))
-                                                       
     
 
 
