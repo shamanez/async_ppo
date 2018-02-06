@@ -9,7 +9,7 @@ Modified by Tin-Yin Lai (wu6u3) into asynchronous version
 import tensorflow as tf
 import numpy as np
 from sklearn.utils import shuffle
-import os
+#import os
 
 class NNValueFunction(object):
     """ NN-based state-value function """
@@ -30,15 +30,15 @@ class NNValueFunction(object):
         self._build_graph()
         #self.sess = tf.Session(graph=self.g)
         #self.sess.run(self.init)
-        
+
         var_refs = [v._ref() for v in self.get_vars()]
         self.gradients = tf.gradients(
             self.loss, var_refs,
             gate_gradients=False,
-            aggregation_method=None, 
+            aggregation_method=None,
             colocate_gradients_with_ops=False)
         self.apply_gradients=None
-        self.sync = self.sync_from(shared_nn) 
+        self.sync = self.sync_from(shared_nn)
 
         #self. global_fit = self.fit_for_global(x=None, y=None, logger=None)
 
@@ -80,7 +80,7 @@ class NNValueFunction(object):
             self.h3_w, self.h3_b = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, self._scope_name+'/h3')
             self.output_w, self.output_b =tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, self._scope_name+'/output')
 
-            scope.reuse_variables() 
+            scope.reuse_variables()
            
                
         #self.sess = tf.Session(graph=self.g)
@@ -173,9 +173,9 @@ class NNValueFunction(object):
 
 #        weights = []
 
-        #name = [] 
+        #name = []
         #for tensor in self.g.as_graph_def().node:
-        #    name.append(tensor.name) 
+        #    name.append(tensor.name)
         #print(name)
 
         #with self.g.as_default() as g:
@@ -190,11 +190,11 @@ class NNValueFunction(object):
   
 
 
-#        return weights 
+#        return weights
 
     def sync_from(self, shared_nn, name=None):
         if shared_nn != None:
-            src_vars = shared_nn.get_vars()      
+            src_vars = shared_nn.get_vars()
             dst_vars = self.get_vars()
             sync_ops = []
 
@@ -202,8 +202,8 @@ class NNValueFunction(object):
         
                 for(src_var, dst_var) in zip(src_vars, dst_vars):
   
-                    sync_op = tf.assign(dst_var, src_var)          
-                    sync_ops.append(sync_op)                       
+                    sync_op = tf.assign(dst_var, src_var)
+                    sync_ops.append(sync_op)
         
             return tf.group(*sync_ops, name=name)
         else:

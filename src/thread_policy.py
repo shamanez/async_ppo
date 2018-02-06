@@ -292,7 +292,7 @@ class Policy(object):
 
     def sync_from(self, shared_policy, name=None):
         if shared_policy != None:
-            src_vars = shared_policy.get_vars()      
+            src_vars = shared_policy.get_vars()
             dst_vars = self.get_vars()
             sync_ops = []
     
